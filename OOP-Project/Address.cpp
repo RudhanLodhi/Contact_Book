@@ -1,11 +1,6 @@
 #include "Address.h"
-#include <iostream>
-#include <string>
-using namespace std;
 
 //                                       Constructors
-Address::Address() : house(""), street(""), city(""), country("") {}
-
 Address::Address(string house, string street, string city, string country) :
 	house(house), street(street), city(city), country(country) {}
 

@@ -1,17 +1,19 @@
 #include "Contact.h"
-#include <string>
-using namespace std;
 
 /*
 *	Implement a constructor that initializes all the Contact parts, including address. Call the setter to set values
 *	as they have the logic to check correct input
 *	Declaration is given in Contact.h
 */
-//                                   Constructors
+//                                   Constructors / Destructor
 
-Contact::Contact() : first_name(""), last_name(""), mobile_number(""), email_address(""), address(NULL) {}
+Contact::Contact() : first_name(""), last_name(""), mobile_number(""), email_address(""), address(nullptr)
+{}
+
 Contact::Contact(string first_name, string last_name, string mobile_number, string email_address, Address *address) :
-	first_name(first_name), last_name(last_name), mobile_number(mobile_number), email_address(email_address), address(address) {}
+	first_name(first_name), last_name(last_name), mobile_number(mobile_number), email_address(email_address) {
+	this->address = new Address(*address);
+}
 
 /*
 *	Implement getter/setters for all the member variables of Contact. Also declare them in the Contact.h header file
@@ -40,6 +42,7 @@ void Contact::setAddress(Address* address) { this->address = address; }
 //                                  Print
 void Contact::print_contact() {
 	cout << "Contact: " << first_name << "  " << last_name << "  " << mobile_number << " " << email_address;
+	cout << "\n         Address: "; address->print_address(); cout << endl;
 }
 
 //                                  Meathords

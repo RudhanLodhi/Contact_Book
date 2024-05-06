@@ -33,8 +33,6 @@ public:
 	void setAddress(string house, string street, string city, string country);
 
 	//Contructor
-	Address(string house, string street, string city, string country);
-	Address();
+	Address(string house = "", string street = "", string city = "", string country = "");
 };
-
 #endif ADDRESS_H

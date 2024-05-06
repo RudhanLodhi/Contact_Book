@@ -1,11 +1,7 @@
 #pragma once
 #ifndef CONTACT_H
 #define CONTACT_H
-
-#include <iostream>
-#include <string>
 #include "Address.h"
-using namespace std;
 
 class Contact {
 private:
@@ -37,9 +33,8 @@ public:
 	//Print
 	void print_contact();
 
-	// Constructor
-	Contact();
+	// Constructor / Destructor
 	Contact(string first_name, string last_name, string mobile_number, string email_address, Address *address);
+	Contact();
 };
-
 #endif CONTACT_H
